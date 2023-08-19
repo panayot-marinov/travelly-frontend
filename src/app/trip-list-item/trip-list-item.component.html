@@ -1,0 +1,14 @@
+<!--<div class="trip-details">-->
+<!--  <div class="trip-id">{{trip.id}}</div>-->
+<!--  <div class="trip-name">{{trip.name}}</div>-->
+<!--  <div class="trip-destination">{{trip.destination}}</div>-->
+<!--</div>-->
+
+<mat-card class="trip-card">
+  <mat-card-content>
+    <p mat-card-title>{{ trip.name }}</p>
+    <p mat-card-title>{{ trip.destination }}</p>
+<!--    <p mat-card-subtitle>Start Date: {{ trip.startDate | date }}</p>-->
+    <button mat-button color="primary" (click)="loadTripDetails(trip.id)">View Details</button>
+  </mat-card-content>
+</mat-card>
