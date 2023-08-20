@@ -22,7 +22,14 @@ export class TripDetailsComponent implements OnInit {
 
     if(tripIdParam != null) {
       const tripId = +tripIdParam;
-      this.trip = this.tripService.getTrip();
+      this.tripService.getTripById(tripId).subscribe(
+        (data) => {
+          this.trip = data;
+        },
+        (error) => {
+          console.error('Cannot fetch trip by id: ', error);
+        }
+      )
     }
   }
 

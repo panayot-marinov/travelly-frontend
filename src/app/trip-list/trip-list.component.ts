@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TripListModel} from "../model/trip-list.model";
 import {TripListService} from "../service/trip-list.service";
+import {Trip} from "../model/trip.model";
 
 @Component({
   selector: 'app-trip-list',
@@ -8,7 +9,7 @@ import {TripListService} from "../service/trip-list.service";
   styleUrls: ['./trip-list.component.css']
 })
 export class TripListComponent implements OnInit {
-  trips: TripListModel[] = [];
+  trips: Trip[] = [];
   // nextId: number = 1;
   // newId!: string;
   // newName!: string;
@@ -22,7 +23,14 @@ export class TripListComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.trips = this.tripListService.getTrips();
+    this.tripListService.getTrips().subscribe(
+      (data) => {
+        this.trips = data;
+      },
+      (error) => {
+        console.error('Error fetching trips: ', error);
+      }
+    );
   }
   constructor(
     private tripListService: TripListService
