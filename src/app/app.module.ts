@@ -12,7 +12,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { TripListComponent } from './trip-list/trip-list.component';
-import { TripItemComponent } from './trip-item/trip-item.component';
 import { TripListItemComponent } from './trip-list-item/trip-list-item.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     NavbarComponent,
     TripListComponent,
-    TripItemComponent,
     TripListItemComponent,
     TripDetailsComponent,
   ],
