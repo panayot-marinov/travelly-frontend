@@ -15,6 +15,10 @@ import { TripListComponent } from './trip-list/trip-list.component';
 import { TripListItemComponent } from './trip-list-item/trip-list-item.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from "@angular/forms";
+import {RegistrationComponent} from "./registration/registration.component";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -23,9 +27,12 @@ import { HttpClientModule } from '@angular/common/http';
     TripListComponent,
     TripListItemComponent,
     TripDetailsComponent,
+    LoginComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
@@ -33,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
+    MatFormFieldModule,
     HttpClientModule
   ],
   providers: [],
