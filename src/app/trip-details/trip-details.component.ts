@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {TripDetailsModel} from "../model/trip-details.model";
 import {TripDetailsService} from "../service/trip-details.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ItemService} from "../service/item.service";
 
 @Component({
   selector: 'app-trip-details',
@@ -14,7 +15,8 @@ export class TripDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private tripService: TripDetailsService
+    private tripService: TripDetailsService,
+    private itemService: ItemService
   ) {}
 
   public ngOnInit(): void {
