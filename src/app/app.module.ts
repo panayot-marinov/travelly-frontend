@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { EditTripDialogComponent } from './edit-trip-dialog/edit-trip-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     TripDetailsComponent,
     LoginComponent,
     RegistrationComponent,
+    EditTripDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
