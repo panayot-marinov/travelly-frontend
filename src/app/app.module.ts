@@ -19,6 +19,9 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { AddTripDialogComponent } from './add-trip-dialog/add-trip-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     TripDetailsComponent,
     LoginComponent,
     RegistrationComponent,
+    AddTripDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
