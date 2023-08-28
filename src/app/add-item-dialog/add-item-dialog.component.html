@@ -1,10 +1,10 @@
 <h2>Add Item</h2>
 <form (ngSubmit)="addItem()">
   <mat-form-field>
-    <input matInput type="text" placeholder="Name" [(ngModel)]="item.name" required>
+    <input matInput type="text" placeholder="Name" [(ngModel)]="newItem.name" required>
   </mat-form-field>
   <mat-form-field>
-    <input matInput type="text" placeholder="Description" [(ngModel)]="item.desc" required>
+    <input matInput type="text" placeholder="Description" [(ngModel)]="newItem.desc" required>
   </mat-form-field>
   <!-- Add more form fields for other properties -->
   <button mat-button (click)="onCancelClick()">Cancel</button>
