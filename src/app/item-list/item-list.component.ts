@@ -13,15 +13,34 @@ export class ItemListComponent {
               private editItemDialogService: EditItemDialogService,
               private DeleteItemDialogService:DeteleItemDialogService,) {}
 
-  public openAddItemDialog() {
-    this.addItemDialogService.openAddItemDialog();
+  openAddItemDialog(): void {
+    const dialogRef = this.dialog.open(AddItemDialogComponent, {
+      width: '400px', // Adjust the width as needed
+      data: { tripId: this.trip.id }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // Refresh the trip details after adding an item
+      this.loadTripDetails(this.trip.id);
+    });
   }
 
-  public editAddItemDialog() {
-    this.addItemDialogService.openAddItemDialog();
+  openEditItemDialog(item: Item): void {
+    const dialogRef = this.dialog.open(EditItemDialogComponent, {
+      width: '400px', // Adjust the width as needed
+      data: { item }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // Refresh the trip details after editing an item
+      this.loadTripDetails(this.trip.id);
+    });
   }
 
-  public deleteAddItemDialog() {
-    this.addItemDialogService.openAddItemDialog();
+  deleteItem(item: Item): void {
+    // Implement logic to delete the item
+    // Use your service to delete the item
+    // Refresh the trip details after deleting an item
+    this.loadTripDetails(this.trip.id);
   }
 }
