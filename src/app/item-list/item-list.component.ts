@@ -39,13 +39,15 @@ export class ItemListComponent {
 
   openDeleteItemDialog(item: Item): void {
     const dialogRef = this.dialog.open(DeleteItemDialogComponent, {
-      width: '400px', // Adjust the width as needed
-      data: { item }
+      width: '300px', // Adjust the width as needed
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // Refresh the trip details after deleting an item
-      this.loadTripDetails(this.trip.id);
+      if (result === true) {
+        // Delete the item here (call a method to delete)
+        // You can use the item.id to identify the item to delete
+        // For example: this.deleteItem(item.id);
+      }
     });
   }
 }
