@@ -1,0 +1,12 @@
+<h2>Add Item</h2>
+<form (ngSubmit)="addItem()">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Name" [(ngModel)]="item.name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Description" [(ngModel)]="item.desc" required>
+  </mat-form-field>
+  <!-- Add more form fields for other properties -->
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-raised-button color="primary" type="submit">Add</button>
+</form>
