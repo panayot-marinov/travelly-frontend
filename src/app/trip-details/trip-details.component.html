@@ -22,6 +22,9 @@
       </div>
     </mat-card-content>
   </mat-card>
+
+  <h3>Items</h3>
+  <app-item-list [items]="trip.items"></app-item-list>
 </div>
 
 <div *ngIf="!trip">
