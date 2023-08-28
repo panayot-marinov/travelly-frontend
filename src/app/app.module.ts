@@ -20,6 +20,7 @@ import {FormsModule} from "@angular/forms";
 import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.component';
+import { EditItemDialogComponent } from './edit-item-dialog/edit-item-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.compon
     LoginComponent,
     RegistrationComponent,
     AddItemDialogComponent,
+    EditItemDialogComponent,
   ],
   imports: [
     BrowserModule,
