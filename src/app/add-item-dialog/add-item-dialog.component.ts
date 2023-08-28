@@ -9,7 +9,7 @@ import {User} from "../model/user.model";
   styleUrls: ['./add-item-dialog.component.css']
 })
 export class AddItemDialogComponent {
-  item: Item = {
+  newItem: Item = {
     id: 0,
     trip: {
             id: 0,
