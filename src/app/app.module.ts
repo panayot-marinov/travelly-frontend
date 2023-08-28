@@ -22,6 +22,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.component';
 import { EditItemDialogComponent } from './edit-item-dialog/edit-item-dialog.component';
 import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dial
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
