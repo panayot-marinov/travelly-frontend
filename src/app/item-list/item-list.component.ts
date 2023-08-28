@@ -37,10 +37,15 @@ export class ItemListComponent {
     });
   }
 
-  deleteItem(item: Item): void {
-    // Implement logic to delete the item
-    // Use your service to delete the item
-    // Refresh the trip details after deleting an item
-    this.loadTripDetails(this.trip.id);
+  openDeleteItemDialog(item: Item): void {
+    const dialogRef = this.dialog.open(DeleteItemDialogComponent, {
+      width: '400px', // Adjust the width as needed
+      data: { item }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // Refresh the trip details after deleting an item
+      this.loadTripDetails(this.trip.id);
+    });
   }
 }
