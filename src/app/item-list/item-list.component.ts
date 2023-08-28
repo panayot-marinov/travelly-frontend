@@ -8,4 +8,20 @@ import { Item } from '../model/item.model'; // Make sure to import your Item mod
 })
 export class ItemListComponent {
   @Input() items: Item[] = []; // Input property to receive the list of items
+
+  constructor(private addItemDialogService: AddItemDialogService,
+              private editItemDialogService: EditItemDialogService,
+              private DeleteItemDialogService:DeteleItemDialogService,) {}
+
+  public openAddItemDialog() {
+    this.addItemDialogService.openAddItemDialog();
+  }
+
+  public editAddItemDialog() {
+    this.addItemDialogService.openAddItemDialog();
+  }
+
+  public deleteAddItemDialog() {
+    this.addItemDialogService.openAddItemDialog();
+  }
 }
