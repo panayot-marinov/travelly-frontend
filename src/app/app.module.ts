@@ -21,6 +21,7 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.component';
 import { EditItemDialogComponent } from './edit-item-dialog/edit-item-dialog.component';
+import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EditItemDialogComponent } from './edit-item-dialog/edit-item-dialog.com
     RegistrationComponent,
     AddItemDialogComponent,
     EditItemDialogComponent,
+    DeleteItemDialogComponent,
   ],
   imports: [
     BrowserModule,
