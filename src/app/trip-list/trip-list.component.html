@@ -1,5 +1,8 @@
 <ul>
   <li *ngFor="let currentTrip of trips">
     <app-trip-list-item [trip]="currentTrip"></app-trip-list-item>
+    <button mat-button color="warn" (click)="openDeleteTripDialog(currentTrip)">
+      Delete
+    </button>
   </li>
 </ul>
