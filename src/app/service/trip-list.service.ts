@@ -30,4 +30,9 @@ export class TripListService {
   public getTripById(id: number): Observable<Trip> {
     return this.httpClient.get<Trip>(this.apiUrl + '/trips/' + id)
   }
+
+  deleteTrip(tripId: number): Observable<void> {
+    const url = `${this.apiUrl}/trips/${tripId}`;
+    return this.httpClient.delete<void>(url);
+  }
 }
