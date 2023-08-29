@@ -38,4 +38,9 @@ export class TripListService {
     // Make the POST request and return the observable
     return this.httpClient.post<Trip>(url, newTrip);
   }
+  
+  deleteTrip(tripId: number): Observable<void> {
+    const url = `${this.apiUrl}/trips/${tripId}`;
+    return this.httpClient.delete<void>(url);
+  }
 }

@@ -22,6 +22,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import { AddTripDialogComponent } from './add-trip-dialog/add-trip-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
+import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {MatInputModule} from "@angular/material/input";
     LoginComponent,
     RegistrationComponent,
     AddTripDialogComponent,
+    DeleteTripDialogComponent,
   ],
   imports: [
     BrowserModule,
