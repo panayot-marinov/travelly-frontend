@@ -22,6 +22,7 @@
       </div>
     </mat-card-content>
   </mat-card>
+  <app-map></app-map>
 
   <h3>Items</h3>
   <app-item-list [items]="trip.items"></app-item-list>
@@ -30,3 +31,4 @@
 <div *ngIf="!trip">
   <p><strong>404 Trip not found</strong></p>
 </div>
+
