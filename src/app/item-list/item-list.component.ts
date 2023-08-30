@@ -1,5 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { Item } from '../model/item.model'; // Make sure to import your Item model
+import { Item } from '../model/item.model';
+import {AddItemDialogService} from "../service/add-item-dialog.service";
+import {AddItemDialogComponent} from "../add-item-dialog/add-item-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
+import {EditItemDialogComponent} from "../edit-item-dialog/edit-item-dialog.component";
+import {DeleteItemDialogComponent} from "../delete-item-dialog/delete-item-dialog.component";
+import {Trip} from "../model/trip.model";
 
 @Component({
   selector: 'app-item-list',
