@@ -19,9 +19,10 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import { AddTripDialogComponent } from './add-trip-dialog/add-trip-dialog.component';
+import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.component';
+import { EditItemDialogComponent } from './edit-item-dialog/edit-item-dialog.component';
+import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import {MatInputModule} from "@angular/material/input";
 import { ItemListComponent } from './item-list/item-list.component';
 import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dialog.component';
 
@@ -34,8 +35,6 @@ import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dial
     TripDetailsComponent,
     LoginComponent,
     RegistrationComponent,
-    AddTripDialogComponent,
-    EditTripDialogComponent,
     ItemListComponent,
     DeleteTripDialogComponent,
   ],
@@ -47,6 +46,7 @@ import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dial
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
