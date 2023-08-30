@@ -23,6 +23,7 @@ import { AddItemDialogComponent } from './add-item-dialog/add-item-dialog.compon
 import { EditItemDialogComponent } from './edit-item-dialog/edit-item-dialog.component';
 import { DeleteItemDialogComponent } from './delete-item-dialog/delete-item-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { ItemListComponent } from './item-list/item-list.component';
 import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dialog.component';
 
 @NgModule({
@@ -37,6 +38,7 @@ import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dial
     AddItemDialogComponent,
     EditItemDialogComponent,
     DeleteItemDialogComponent,
+    ItemListComponent,
     DeleteTripDialogComponent,
   ],
   imports: [
