@@ -40,7 +40,7 @@ export class ItemListComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       // Refresh the trip details after adding an item
-      this.loadTripDetails(this.trip.id);
+      //this.loadTripDetails(this.trip.id); //TODO
     });
   }
 
@@ -52,7 +52,7 @@ export class ItemListComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       // Refresh the trip details after editing an item
-      this.loadTripDetails(this.trip.id);
+      //this.loadTripDetails(this.trip.id); //TODO
     });
   }
 
