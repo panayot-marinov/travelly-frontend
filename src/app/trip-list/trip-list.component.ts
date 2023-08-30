@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TripListModel} from "../model/trip-list.model";
 import {TripListService} from "../service/trip-list.service";
 import {Trip} from "../model/trip.model";
+import {AddTripDialogComponent} from "../add-trip-dialog/add-trip-dialog.component";
 import {DeleteTripDialogComponent} from "../delete-trip-dialog/delete-trip-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 
@@ -24,6 +25,12 @@ export class TripListComponent implements OnInit {
   //   )
   // }
 
+  constructor(
+    private dialog: MatDialog,
+    private tripListService: TripListService
+  ) {
+  }
+
   ngOnInit(): void {
     this.tripListService.getTrips().subscribe(
       (data) => {
@@ -34,6 +41,16 @@ export class TripListComponent implements OnInit {
       }
     );
   }
+
+  openAddTripDialog(): void {
+    const dialogRef = this.dialog.open(AddTripDialogComponent, {
+      width: '400px' // Adjust the width as needed
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // Handle dialog close event, if needed
+    });
+
   constructor(
     private dialog: MatDialog,
     private tripListService: TripListService

@@ -35,9 +35,6 @@ import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dial
     TripDetailsComponent,
     LoginComponent,
     RegistrationComponent,
-    AddItemDialogComponent,
-    EditItemDialogComponent,
-    DeleteItemDialogComponent,
     ItemListComponent,
     DeleteTripDialogComponent,
   ],
@@ -53,7 +50,11 @@ import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dial
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatInputModule,
+    HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
