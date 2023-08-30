@@ -21,8 +21,6 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { EditTripDialogComponent } from './edit-trip-dialog/edit-trip-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { MapComponent } from './map/map.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dialog.component';
 
@@ -35,10 +33,9 @@ import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dial
     TripDetailsComponent,
     LoginComponent,
     RegistrationComponent,
-    MapComponent,
+    EditTripDialogComponent,
     ItemListComponent,
     DeleteTripDialogComponent,
-    EditTripDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,11 +50,8 @@ import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dial
     MatFormFieldModule,
     HttpClientModule,
     MatDialogModule,
-    HttpClientModule,
-    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
