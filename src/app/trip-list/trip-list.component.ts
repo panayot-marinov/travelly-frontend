@@ -50,11 +50,7 @@ export class TripListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       // Handle dialog close event, if needed
     });
-
-  constructor(
-    private dialog: MatDialog,
-    private tripListService: TripListService
-  ) { }
+  }
 
   openDeleteTripDialog(trip: Trip): void {
     const dialogRef = this.dialog.open(DeleteTripDialogComponent, {
