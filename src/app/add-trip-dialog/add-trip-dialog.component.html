@@ -1,0 +1,11 @@
+<h2>Add New Trip</h2>
+<form (ngSubmit)="addTrip()">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Name" name="name" [(ngModel)]="newTrip.name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Destination" name="description" [(ngModel)]="newTrip.destination" required>
+  </mat-form-field>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-raised-button color="primary" type="submit">Add Trip</button>
+</form>
