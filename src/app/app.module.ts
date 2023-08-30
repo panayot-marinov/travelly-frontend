@@ -21,6 +21,8 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './map/map.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MapComponent } from './map/map.component';
     LoginComponent,
     RegistrationComponent,
     MapComponent,
+    ItemListComponent,
+    DeleteTripDialogComponent,
   ],
   imports: [
     BrowserModule,
