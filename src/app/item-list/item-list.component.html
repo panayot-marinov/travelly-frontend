@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let item of items">
+    {{ item.name }} - {{ item.amount }}
+  </li>
+  <button mat-button color="primary" (click)="openEditItemDialog(item)">Edit</button>
+  <button mat-button color="warn" (click)="openDeleteItemDialog(item)">Delete</button>
+</ul>
+<button mat-raised-button color="primary" (click)="openAddItemDialog()">Add Item</button>
+
