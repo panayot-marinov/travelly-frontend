@@ -21,6 +21,7 @@ import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { EditTripDialogComponent } from './edit-trip-dialog/edit-trip-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { ItemListComponent } from './item-list/item-list.component';
 import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dialog.component';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { DeleteTripDialogComponent } from './delete-trip-dialog/delete-trip-dial
     LoginComponent,
     RegistrationComponent,
     EditTripDialogComponent,
+    ItemListComponent,
     DeleteTripDialogComponent,
   ],
   imports: [
