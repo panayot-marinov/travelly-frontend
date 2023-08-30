@@ -27,8 +27,10 @@ export class ItemListComponent {
   }
 
   constructor(private addItemDialogService: AddItemDialogService,
-              private editItemDialogService: EditItemDialogService,
-              private DeleteItemDialogService:DeteleItemDialogService,) {}
+              private dialog: MatDialog
+              //private editItemDialogService: EditItemDialogService,
+              //private DeleteItemDialogService:DeteleItemDialogService,
+              ) {}
 
   openAddItemDialog(): void {
     const dialogRef = this.dialog.open(AddItemDialogComponent, {
