@@ -50,4 +50,5 @@ import { MapComponent } from './map/map.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
