@@ -8,6 +8,17 @@ import { Item } from '../model/item.model'; // Make sure to import your Item mod
 })
 export class ItemListComponent {
   @Input() items: Item[] = []; // Input property to receive the list of items
+  trip: Trip = { //TODO
+    id: 0,
+    name: "",
+    destination: "",
+    startDate: new Date(),
+    endDate: new Date(),
+    budget: 0,
+    interests: "",
+    items: [],
+    users:  []
+  }
 
   constructor(private addItemDialogService: AddItemDialogService,
               private editItemDialogService: EditItemDialogService,
