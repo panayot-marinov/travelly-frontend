@@ -30,6 +30,7 @@ import {AddTripDialogComponent} from "./add-trip-dialog/add-trip-dialog.componen
 import {EditTripDialogComponent} from "./edit-trip-dialog/edit-trip-dialog.component";
 import {MapComponent} from "./map/map.component";
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import {LeafletModule} from "@asymmetrik/ngx-leaflet";
     MatInputModule,
     HttpClientModule,
     MatDialogModule,
-    LeafletModule
+    LeafletModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
