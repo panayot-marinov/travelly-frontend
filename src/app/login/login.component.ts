@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {AuthService} from "../service/auth.service";
+import {Router} from "@angular/router";
+import {UserLogin} from "../model/user-login.model";
 
 @Component({
   selector: 'app-login',
@@ -7,19 +9,21 @@ import {AuthService} from "../service/auth.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
-  password: string = '';
+  userLogin: UserLogin = {
+    username: '',
+    password: '',
+  };
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  login(): void {
-    this.authService.login(this.username, this.password).subscribe(
-      response => {
-        //handle successful login
+  onSubmit() {
+    this.authService.register(this.userLogin).subscribe(
+      (response) => {
+        this.router.navigate(['/trips']);
       },
-      error => {
-        console.error('Login error:', error);
+      (error) => {
+        // Handle registration error
       }
-    )
+    );
   }
 }
