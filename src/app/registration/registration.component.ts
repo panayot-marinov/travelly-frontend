@@ -3,8 +3,6 @@ import {AuthService} from "../service/auth.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserRegistration} from "../model/user-registration.model";
-import {HttpClient} from "@angular/common/http";
-
 
 @Component({
   selector: 'app-registration',
@@ -18,12 +16,12 @@ export class RegistrationComponent {
     password: '',
   };
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
     this.authService.register(this.userRegistration).subscribe(
       (response) => {
-
+        this.router.navigate(['/login']);
       },
       (error) => {
         // Handle registration error
