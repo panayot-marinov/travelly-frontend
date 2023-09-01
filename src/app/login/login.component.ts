@@ -17,13 +17,13 @@ export class LoginComponent {
     password: '',
   };
 
-  constructor(private authService: UserService, private tripDataService: TripDataService, private router: Router) {}
+  constructor(private userService: UserService, private tripDataService: TripDataService, private router: Router) {}
 
   onSubmit() {
-    this.authService.login(this.userLogin).subscribe(
+    this.userService.login(this.userLogin).subscribe(
       (response) => {
-        const userId = response['userId'];
-        this.authService.getTripsByUserId(userId).subscribe(
+        this.userService.setUserId(response['userId'])
+        this.userService.getTripsByUserId(this.userService.getUserId()).subscribe(
           (tripsData: any[]) => {
             const trips: TripList[] = tripsData.map((tripData) => {
               return new TripList(
