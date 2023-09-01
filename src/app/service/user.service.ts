@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {UserRegistration} from "../model/user-registration.model";
 import {UserLogin} from "../model/user-login.model";
+import {Trip} from "../model/trip.model";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class UserService {
 
   getTripsByUserId (userId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${userId}/trips`);
+  }
+
+  addTrip(trip: Trip): Observable<any> {
+    return this.http.post(`${this.apiUrl}/${this.getUserId()}/trips`, trip);
   }
 
 
