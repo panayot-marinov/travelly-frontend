@@ -36,6 +36,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { TripCreateComponent } from './trip-create/trip-create.component';
 import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AboutComponent } from './about/about.component';
     MapComponent,
     TripViewEditComponent,
     TripCreateComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
