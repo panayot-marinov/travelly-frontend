@@ -18,11 +18,11 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   loadGoogleMap(): void {
     const mapOptions = {
-      center: { lat: -34.397, lng: 150.644 }, // Specify your initial map center
-      zoom: 8 // Specify the initial zoom level
+      center: { lat: 42.6977, lng: 23.3219 },
+      zoom: 11
     };
 
-    const mapContainer = this.renderer.selectRootElement('#google-map'); // Use Renderer2 to get the element
+    const mapContainer = this.renderer.selectRootElement('#google-map');
     const map = new google.maps.Map(mapContainer, mapOptions);
   }
 }
