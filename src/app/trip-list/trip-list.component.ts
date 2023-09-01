@@ -38,31 +38,6 @@ export class TripListComponent implements OnInit {
     });
   }
 
-  openDeleteTripDialog(trip: TripList): void {
-    const dialogRef = this.dialog.open(DeleteTripDialogComponent, {
-      width: '400px',
-      data: trip,
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result === 'confirm') {
-        this.tripListService.deleteTrip(trip.id).subscribe(
-          () => {
-            // Remove the trip from the list on successful deletion
-            const index = this.trips.indexOf(trip);
-            if (index !== -1) {
-              this.trips.splice(index, 1);
-            }
-          },
-          (error) => {
-            console.error('Error deleting trip:', error);
-          }
-        );
-      }
-    });
-  }
-
-
   deleteTrip(tripId: number): void {
     this.tripService.deleteTripById(tripId).subscribe(() => {
       // Remove the deleted trip from the local array
