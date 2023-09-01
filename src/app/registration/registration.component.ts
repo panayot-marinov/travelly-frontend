@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AuthService} from "../service/auth.service";
+import {UserService} from "../service/user.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserRegistration} from "../model/user-registration.model";
@@ -16,7 +16,7 @@ export class RegistrationComponent {
     password: '',
   };
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: UserService, private router: Router) {}
 
   onSubmit() {
     this.authService.register(this.userRegistration).subscribe(

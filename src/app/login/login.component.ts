@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AuthService} from "../service/auth.service";
+import {UserService} from "../service/user.service";
 import {Router} from "@angular/router";
 import {UserLogin} from "../model/user-login.model";
 import {TripList} from "../model/trip-list.model";
@@ -16,7 +16,7 @@ export class LoginComponent {
     password: '',
   };
 
-  constructor(private authService: AuthService, private tripDataService: TripDataService, private router: Router) {}
+  constructor(private authService: UserService, private tripDataService: TripDataService, private router: Router) {}
 
   onSubmit() {
     this.authService.login(this.userLogin).subscribe(
