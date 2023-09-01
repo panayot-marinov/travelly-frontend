@@ -14,4 +14,9 @@ export class TripService {
   getTrips(): Observable<TripList[]> {
     return this.http.get<TripList[]>(this.apiUrl);
   }
+
+  deleteTripById (tripId: number): Observable<any> {
+     const url = `${this.apiUrl}/${tripId}`;
+     return this.http.delete<void>(url);
+  }
 }
