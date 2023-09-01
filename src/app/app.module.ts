@@ -34,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TripViewEditComponent } from './trip-view-edit/trip-view-edit.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import { TripCreateComponent } from './trip-create/trip-create.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     EditTripDialogComponent,
     DeleteTripDialogComponent,
     MapComponent,
-    TripViewEditComponent
+    TripViewEditComponent,
+    TripCreateComponent
   ],
   imports: [
     BrowserModule,
