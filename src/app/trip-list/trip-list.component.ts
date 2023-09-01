@@ -4,11 +4,9 @@ import { TripList } from '../model/trip-list.model';
 import {TripDataService} from "../service/trip-data.service";
 import {MatDialog} from "@angular/material/dialog";
 import {TripListService} from "../service/trip-list.service";
-import {Trip} from "../model/trip.model";
-import {DeleteTripDialogComponent} from "../delete-trip-dialog/delete-trip-dialog.component";
-import {AddTripDialogComponent} from "../add-trip-dialog/add-trip-dialog.component";
 import {TripService} from "../service/trip.service";
 import {Router} from "@angular/router";
+import {UserService} from "../service/user.service";
 
 @Component({
   selector: 'app-trip-list',
@@ -22,20 +20,15 @@ export class TripListComponent implements OnInit {
               private dialog: MatDialog,
               private tripListService: TripListService,
               private tripService: TripService,
+              private userService: UserService,
               private router: Router) {}
 
   ngOnInit(): void {
     this.trips = this.tripDataService.getTrips();
   }
 
-  openAddTripDialog(): void {
-    const dialogRef = this.dialog.open(AddTripDialogComponent, {
-      width: '400px' // Adjust the width as needed
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      // Handle dialog close event, if needed
-    });
+  redirectToAddTripPage(): void {
+    this.router.navigate(['/users/', this.userService.getUserId(), "trips"]);
   }
 
   deleteTrip(tripId: number): void {
