@@ -9,12 +9,6 @@
   padding-top: 20px;
 }
 
-.add-trip-button {
-  width: 40%;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 .trip-card {
   width: 40%;
   margin: 10px auto;
@@ -75,5 +69,21 @@
 }
 
 .delete-button:hover {
-  background-color: darkred;
+  background-color: #a30c0c;
 }
+
+/* Center-align the "Add New Trip" button */
+.add-trip-button {
+  width: 40%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Add hover effect to the "Add New Trip" button */
+.add-trip-button:hover {
+  background-color: #71059e; /*#007bff; /* Change background color on hover */
+  transform: scale(1.1); /* Add a simple scale effect on hover */
+}
+
