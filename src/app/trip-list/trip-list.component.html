@@ -1,5 +1,5 @@
 <div class="trip-list">
-  <button mat-raised-button color="primary" class="add-trip-button" (click)="openAddTripDialog()">Add New Trip</button>
+  <button mat-raised-button color="primary" class="add-trip-button" (click)="redirectToAddTripPage()">Add New Trip</button>
   <mat-card *ngFor="let trip of trips" class="trip-card">
     <mat-card-content (click)="navigateToTripDetail(trip.id)">
       <div class="trip-info">
