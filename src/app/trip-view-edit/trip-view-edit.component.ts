@@ -39,7 +39,7 @@ export class TripViewEditComponent {
   }
 
   updateTrip() {
-    this.tripService.updateTripById(this.trip).subscribe();
+    this.tripService.updateTrip(this.trip).subscribe();
   }
 
 }
