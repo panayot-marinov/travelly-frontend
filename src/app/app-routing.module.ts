@@ -4,13 +4,16 @@ import {TripListComponent} from "./trip-list/trip-list.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {LoginComponent} from "./login/login.component";
 import {TripViewEditComponent} from "./trip-view-edit/trip-view-edit.component";
+import {TripCreateComponent} from "./trip-create/trip-create.component";
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
   { path: '', redirectTo: '/trips', pathMatch: 'full' },
   { path: 'trips', component: TripListComponent },
   { path: 'trips/:tripId', component: TripViewEditComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegistrationComponent }
+  { path: 'users/:userId/trips', component: TripCreateComponent }
+
 ];
 
 @NgModule({
