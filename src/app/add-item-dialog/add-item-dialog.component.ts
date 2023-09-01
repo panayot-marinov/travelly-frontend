@@ -20,7 +20,6 @@ export class AddItemDialogComponent {
             budget: 5,
             interests: "",
             items: [],
-            users: [],
           },
     name: '',
     desc: '', // Make sure you have a 'description' property in your Item model
