@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {UserLogin} from "../model/user-login.model";
 import {TripList} from "../model/trip-list.model";
 import {TripDataService} from "../service/trip-data.service";
+import {DateService} from "../service/date.service";
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,17 @@ export class LoginComponent {
       (response) => {
         const userId = response['userId'];
         this.authService.getTripsByUserId(userId).subscribe(
-          (trips: TripList[]) => {
+          (tripsData: any[]) => {
+            const trips: TripList[] = tripsData.map((tripData) => {
+              return new TripList(
+                tripData.id,
+                tripData.name,
+                tripData.destination,
+                DateService.convertNumberArrayToDate(tripData.startDate),
+                DateService.convertNumberArrayToDate(tripData.endDate)
+              );
+            });
+
             this.tripDataService.setTrips(trips);
             this.router.navigate(['trips'], { state: { trips } });
           }
