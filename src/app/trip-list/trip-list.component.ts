@@ -40,13 +40,12 @@ export class TripListComponent implements OnInit {
 
   deleteTrip(tripId: number): void {
     this.tripService.deleteTripById(tripId).subscribe(() => {
-      // Remove the deleted trip from the local array
       this.trips = this.trips.filter(trip => trip.id !== tripId);
     });
   }
 
   navigateToTripDetail(tripId: number): void {
-    this.router.navigate(['/trip', tripId]); // Assuming you have a 'trip/:id' route
+    this.router.navigate(['/trips', tripId]);
   }
 
 }
