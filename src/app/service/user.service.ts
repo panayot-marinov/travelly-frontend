@@ -9,6 +9,7 @@ import {UserLogin} from "../model/user-login.model";
 })
 export class UserService {
   private readonly apiUrl: string = 'http://localhost:8080/users';
+  private userId: number = -1;
 
   constructor(private http: HttpClient) {}
 
@@ -22,5 +23,14 @@ export class UserService {
 
   getTripsByUserId (userId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${userId}/trips`);
+  }
+
+
+  setUserId(userId: number): void {
+    this.userId = userId;
+  }
+
+  getUserId(): number {
+    return this.userId;
   }
 }
