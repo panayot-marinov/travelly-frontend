@@ -40,7 +40,7 @@ mat-datepicker-toggle {
   flex-direction: row;
 }
 
-.delete-button {
+.update-button {
   background-color: #af39ff;
   color: #ffffff;
   border: none;
@@ -50,7 +50,7 @@ mat-datepicker-toggle {
   cursor: pointer;
 }
 
-.delete-button:hover {
+.update-button:hover {
   background-color: #71059e;
 }
 
