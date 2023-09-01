@@ -1,10 +1,20 @@
-<ul>
-  <li *ngFor="let currentTrip of trips">
-    <app-trip-list-item [trip]="currentTrip"></app-trip-list-item>
-    <button mat-button color="warn" (click)="openDeleteTripDialog(currentTrip)">
-      Delete
-    </button>
-  </li>
-</ul>
-
-<button mat-raised-button color="primary" (click)="openAddTripDialog()">Add New Trip</button>
+<div class="trip-list">
+  <button mat-raised-button color="primary" class="add-trip-button" (click)="openAddTripDialog()">Add New Trip</button>
+  <mat-card *ngFor="let trip of trips" class="trip-card">
+    <mat-card-content (click)="navigateToTripDetail(trip.id)">
+      <div class="trip-info">
+        <div class="trip-info-left">
+          <h3 class="trip-name">{{ trip.name }}</h3>
+          <div class="trip-details">
+            <p><strong>Destination:</strong> {{ trip.destination }}</p>
+            <p><strong>Start Date:</strong> {{ trip.startDate | date }}</p>
+            <p><strong>End Date:</strong> {{ trip.endDate | date }}</p>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button class="delete-button" (click)="deleteTrip(trip.id)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
