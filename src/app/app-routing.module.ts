@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {TripListComponent} from "./trip-list/trip-list.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {LoginComponent} from "./login/login.component";
-import {TripViewEditComponent} from "./trip-view/trip-view-edit.component";
+import {TripViewEditComponent} from "./trip-view-edit/trip-view-edit.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/trips', pathMatch: 'full' },

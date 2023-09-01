@@ -31,7 +31,7 @@ import {EditTripDialogComponent} from "./edit-trip-dialog/edit-trip-dialog.compo
 import {MapComponent} from "./map/map.component";
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 import { ReactiveFormsModule } from '@angular/forms';
-import { TripViewEditComponent } from './trip-view/trip-view-edit.component';
+import { TripViewEditComponent } from './trip-view-edit/trip-view-edit.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 
