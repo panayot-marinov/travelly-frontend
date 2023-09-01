@@ -22,12 +22,8 @@ export class TripService {
     return this.http.get<Trip>(url);
   }
 
-  updateTripById(trip: Trip): Observable<any> {
+  updateTrip(trip: Trip): Observable<any> {
     return this.http.patch(`${this.apiUrl}`, trip);
-  }
-
-  register(userRegistration: UserRegistration): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, userRegistration);
   }
 
   deleteTripById (tripId: number): Observable<any> {
