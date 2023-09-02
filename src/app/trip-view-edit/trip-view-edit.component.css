@@ -1,0 +1,56 @@
+/* Center the card in the viewport */
+mat-card {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: cornflowerblue;
+}
+
+.edit-button-container {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Full-width form fields */
+.full-width {
+  width: 100%;
+}
+
+/* Adjust spacing */
+mat-form-field {
+  margin-top: 10px;
+}
+
+/* Center the datepicker toggle icon */
+mat-datepicker-toggle {
+  margin-top: 25px;
+  text-align: center;
+  display: block;
+}
+
+.mat-card-actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.update-button {
+  background-color: #af39ff;
+  color: #ffffff;
+  border: none;
+  flex: 1;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.update-button:hover {
+  background-color: #71059e;
+}
+

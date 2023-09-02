@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import {AuthService} from "../service/auth.service";
+import {UserService} from "../service/user.service";
+import {Router} from "@angular/router";
+import {UserLogin} from "../model/user-login.model";
+import {TripList} from "../model/trip-list.model";
+import {TripDataService} from "../service/trip-data.service";
+import {DateService} from "../service/date.service";
 
 @Component({
   selector: 'app-login',
@@ -7,19 +12,34 @@ import {AuthService} from "../service/auth.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
-  password: string = '';
+  userLogin: UserLogin = {
+    username: '',
+    password: '',
+  };
 
-  constructor(private authService: AuthService) {}
+  constructor(private userService: UserService, private tripDataService: TripDataService, private router: Router) {}
 
-  login(): void {
-    this.authService.login(this.username, this.password).subscribe(
-      response => {
-        //handle successful login
-      },
-      error => {
-        console.error('Login error:', error);
+  onSubmit() {
+    this.userService.login(this.userLogin).subscribe(
+      (response) => {
+        this.userService.setUserId(response['userId'])
+        this.userService.getTripsByUserId(this.userService.getUserId()).subscribe(
+          (tripsData: any[]) => {
+            const trips: TripList[] = tripsData.map((tripData) => {
+              return new TripList(
+                tripData.id,
+                tripData.name,
+                tripData.destination,
+                DateService.convertNumberArrayToDate(tripData.startDate),
+                DateService.convertNumberArrayToDate(tripData.endDate)
+              );
+            });
+
+            this.tripDataService.setTrips(trips);
+            this.router.navigate(['trips'], { state: { trips } });
+          }
+        );
       }
-    )
+    );
   }
 }

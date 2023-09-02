@@ -1,0 +1,48 @@
+<!-- Angular Material Card for the Trip Details -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Trip Details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- Editable Form -->
+    <form>
+      <!-- Name -->
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="trip.name" placeholder="Name" name="name">
+      </mat-form-field>
+
+      <!-- Destination -->
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="trip.destination" placeholder="Destination" name="destination">
+      </mat-form-field>
+
+      <!-- Start Date -->
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="trip.startDate" placeholder="Start Date" [matDatepicker]="startDatePicker" name="startDate">
+        <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- End Date -->
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="trip.endDate" placeholder="End Date" [matDatepicker]="endDatePicker" name="endDate">
+        <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #endDatePicker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Budget -->
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="trip.budget" placeholder="Budget" name="budget">
+      </mat-form-field>
+
+      <!-- Interests -->
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="trip.interests" placeholder="Interests" name="interests">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button class="update-button" (click)="updateTrip()">Update</button>
+  </mat-card-actions>
+</mat-card>

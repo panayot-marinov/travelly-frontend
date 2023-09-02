@@ -30,6 +30,11 @@ import {AddTripDialogComponent} from "./add-trip-dialog/add-trip-dialog.componen
 import {EditTripDialogComponent} from "./edit-trip-dialog/edit-trip-dialog.component";
 import {MapComponent} from "./map/map.component";
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
+import { ReactiveFormsModule } from '@angular/forms';
+import { TripViewEditComponent } from './trip-view-edit/trip-view-edit.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import { TripCreateComponent } from './trip-create/trip-create.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,9 @@ import {LeafletModule} from "@asymmetrik/ngx-leaflet";
     AddTripDialogComponent,
     EditTripDialogComponent,
     DeleteTripDialogComponent,
-    MapComponent
+    MapComponent,
+    TripViewEditComponent,
+    TripCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,10 @@ import {LeafletModule} from "@asymmetrik/ngx-leaflet";
     MatInputModule,
     HttpClientModule,
     MatDialogModule,
-    LeafletModule
+    LeafletModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

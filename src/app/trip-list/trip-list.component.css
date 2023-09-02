@@ -1,4 +1,89 @@
-.mat-card {
-  margin: 16px;
-  padding: 16px;
+/* trips.component.css */
+
+.trip-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  padding-top: 20px;
 }
+
+.trip-card {
+  width: 40%;
+  margin: 10px auto;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: cornflowerblue;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.trip-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.trip-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.trip-info-left {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.trip-name {
+  margin: 0;
+  font-weight: bold;
+  color: #322e2e; /* Set trip name to black */
+}
+
+.trip-details {
+  margin-top: 10px;
+}
+
+.mat-card-actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.delete-button {
+  background-color: #ff8383;
+  color: #ffffff;
+  border: none;
+  flex: 1;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #a30c0c;
+}
+
+/* Center-align the "Add New Trip" button */
+.add-trip-button {
+  width: 40%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Add hover effect to the "Add New Trip" button */
+.add-trip-button:hover {
+  background-color: #71059e; /*#007bff; /* Change background color on hover */
+  transform: scale(1.1); /* Add a simple scale effect on hover */
+}
+

@@ -1,7 +1,6 @@
 import {Item} from "./item.model";
-import {User} from "./user.model";
 
-export class TripDetailsModel {
+export class TripDetails{
   id: number;
   name: string;
   destination: string;
@@ -10,11 +9,10 @@ export class TripDetailsModel {
   budget: number;
   interests: string;
   items: Item[]= [];
-  users: User[] = [];
 
   constructor(id: number, name: string, destination: string,
               startDate: Date, endDate: Date, budget: number,
-              interests: string, items: Item[], users: User[]
+              interests: string, items: Item[]
   ) {
     this.id = id;
     this.name = name;
@@ -24,6 +22,5 @@ export class TripDetailsModel {
     this.budget = budget;
     this.interests = interests;
     this.items = items;
-    this.users = users;
   }
 }

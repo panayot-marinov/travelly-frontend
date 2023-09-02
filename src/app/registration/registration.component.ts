@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {AuthService} from "../service/auth.service";
+import {UserService} from "../service/user.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+import {UserRegistration} from "../model/user-registration.model";
 
 @Component({
   selector: 'app-registration',
@@ -7,18 +10,21 @@ import {AuthService} from "../service/auth.service";
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-  username: string = '';
-  password: string = '';
 
-  constructor(private authService: AuthService) {}
+  userRegistration: UserRegistration = {
+    username: '',
+    password: '',
+  };
 
-  register(): void {
-    this.authService.register(this.username, this.password).subscribe(
-      response => {
-        //handle successful registration
+  constructor(private authService: UserService, private router: Router) {}
+
+  onSubmit() {
+    this.authService.register(this.userRegistration).subscribe(
+      (response) => {
+        this.router.navigate(['/login']);
       },
-      error => {
-        console.error('Registration not successful: ', error);
+      (error) => {
+        // Handle registration error
       }
     );
   }

@@ -18,8 +18,8 @@ export class AddTripDialogComponent {
     new Date(), // endDate
     0, // budget
     '', // interests
-    [], // items
-    []  // users
+    []//, // items
+    //[]  // users
   ); // Create a new Trip instance
 
   constructor(

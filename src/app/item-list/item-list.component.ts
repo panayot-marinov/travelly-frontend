@@ -22,8 +22,7 @@ export class ItemListComponent {
     endDate: new Date(),
     budget: 0,
     interests: "",
-    items: [],
-    users:  []
+    items: []
   }
 
   constructor(private addItemDialogService: AddItemDialogService,

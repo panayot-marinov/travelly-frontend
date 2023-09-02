@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TripDetailsModel } from '../model/trip-details.model';
+import { TripDetails} from '../model/trip-details.model';
 import { TripDetailsService } from '../service/trip-details.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditTripDialogComponent } from '../edit-trip-dialog/edit-trip-dialog.component';
@@ -11,7 +11,7 @@ import { EditTripDialogComponent } from '../edit-trip-dialog/edit-trip-dialog.co
   styleUrls: ['./trip-details.component.css']
 })
 export class TripDetailsComponent implements OnInit {
-  trip: TripDetailsModel | undefined;
+  trip: TripDetails | undefined;
 
   constructor(
     private route: ActivatedRoute,

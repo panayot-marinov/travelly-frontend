@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import {TripListModel} from "../model/trip-list.model";
-import {TripDetailsModel} from "../model/trip-details.model";
 import {Observable} from "rxjs";
 import {Trip} from "../model/trip.model";
 import {HttpClient} from "@angular/common/http";

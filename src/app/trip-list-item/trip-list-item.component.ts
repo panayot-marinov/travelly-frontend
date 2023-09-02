@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TripListModel} from "../model/trip-list.model";
+import {TripList} from "../model/trip-list.model";
 import {Router} from "@angular/router";
 
 @Component({
@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class TripListItemComponent implements OnInit {
   title: string = 'adqwqeqwewqq';
-  @Input() trip!:TripListModel;
+  @Input() trip!:TripList;
 
   public ngOnInit(): void {
     console.log('Pesho');

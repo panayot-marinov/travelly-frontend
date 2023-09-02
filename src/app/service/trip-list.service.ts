@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {TripListModel} from "../model/trip-list.model";
 import {Observable} from "rxjs";
 import {Trip} from "../model/trip.model";
+import {TripList} from "../model/trip-list.model";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -23,8 +23,8 @@ export class TripListService {
     // this.apiUrl = apiUrl;
   }
 
-  public getTrips(): Observable<Trip[]> {
-    return this.httpClient.get<Trip[]>(this.apiUrl + '/trips')
+  public getTrips(): Observable<TripList[]> {
+    return this.httpClient.get<TripList[]>(this.apiUrl + '/trips')
   }
 
   public getTripById(id: number): Observable<Trip> {
@@ -38,7 +38,7 @@ export class TripListService {
     // Make the POST request and return the observable
     return this.httpClient.post<Trip>(url, newTrip);
   }
-  
+
   deleteTrip(tripId: number): Observable<void> {
     const url = `${this.apiUrl}/trips/${tripId}`;
     return this.httpClient.delete<void>(url);
