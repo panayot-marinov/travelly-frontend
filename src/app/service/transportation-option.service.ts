@@ -7,7 +7,7 @@ import {TransportationOption} from "../model/transportation-option.model";
   providedIn: 'root',
 })
 export class TransportationOptionService {
-  private apiUrl = 'http://localhost:8080/transportationOption';
+  private apiUrl = 'http://localhost:8080/transportationOptions';
 
   constructor(private http: HttpClient) {}
 
