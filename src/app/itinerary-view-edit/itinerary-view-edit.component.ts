@@ -88,18 +88,20 @@ export class ItineraryViewEditComponent {
   }
 
   updateItinerary() {
-    this.accommodations.forEach((accommodation: Accommodation) => {
-      this.accommodationService.updateAccommodation(accommodation);
-    });
+    this.itineraryService.updateItinerary(this.itinerary).subscribe(
+      (response) => {
+        this.accommodations.forEach((accommodation: Accommodation) => {
+          this.accommodationService.updateAccommodation(accommodation).subscribe();
+        });
 
-    this.activities.forEach((activity: Activity) => {
-      this.activityService.updateActivity(activity);
-    });
+        this.activities.forEach((activity: Activity) => {
+          this.activityService.updateActivity(activity).subscribe();
+        });
 
-    this.transportationOptions.forEach((transportationOption: TransportationOption) => {
-      this.transportationOptionService.updateTransportationOption(transportationOption);
-    });
-
-    this.itineraryService.updateItinerary(this.itinerary).subscribe();
+        this.transportationOptions.forEach((transportationOption: TransportationOption) => {
+          this.transportationOptionService.updateTransportationOption(transportationOption).subscribe();
+        });
+      }
+    );
   }
 }
