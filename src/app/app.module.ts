@@ -37,6 +37,10 @@ import {MatNativeDateModule} from "@angular/material/core";
 import { TripCreateComponent } from './trip-create/trip-create.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ItineraryCreateComponent } from './itinerary-create/itinerary-create.component';
+import {MatSelectModule} from "@angular/material/select";
+import { ItineraryViewEditComponent } from './itinerary-view-edit/itinerary-view-edit.component';
+import { ItineraryListComponent } from './itinerary-list/itinerary-list.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,10 @@ import { ContactComponent } from './contact/contact.component';
     TripViewEditComponent,
     TripCreateComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ItineraryCreateComponent,
+    ItineraryViewEditComponent,
+    ItineraryListComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +88,8 @@ import { ContactComponent } from './contact/contact.component';
     LeafletModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

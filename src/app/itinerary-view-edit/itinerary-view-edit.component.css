@@ -1,0 +1,36 @@
+.center-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px; /* Add padding to create spacing between form elements */
+  box-sizing: border-box; /* Include padding in card width */
+  background-color: cornflowerblue;
+}
+
+.added-items {
+  margin-top: 20px;
+}
+
+mat-form-field{
+  margin-right: 20px; /* Adjust the value to control the spacing */
+}
+
+.update-itinerary-button {
+  width: 40%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Add hover effect to the "Add New Trip" button */
+.update-itinerary-button:hover {
+  background-color: #71059e; /*#007bff; /* Change background color on hover */
+  transform: scale(1.1); /* Add a simple scale effect on hover */
+}

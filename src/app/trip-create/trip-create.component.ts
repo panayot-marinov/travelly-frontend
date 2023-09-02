@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Trip} from "../model/trip.model";
 import {UserService} from "../service/user.service";
+import {TripService} from "../service/trip.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-trip-create',
@@ -19,9 +21,13 @@ export class TripCreateComponent {
     []
   );
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private tripService: TripService, private router: Router) { }
 
   addTrip() {
-    this.userService.addTrip(this.trip).subscribe();
+    this.userService.addTrip(this.trip).subscribe(
+      (tripId: number) => {
+        this.router.navigate(['/trips/', tripId, "itineraries-create"]);
+      }
+    );
   }
 }
