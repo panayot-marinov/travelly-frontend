@@ -35,6 +35,8 @@ import { TripViewEditComponent } from './trip-view-edit/trip-view-edit.component
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { TripCreateComponent } from './trip-create/trip-create.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { TripCreateComponent } from './trip-create/trip-create.component';
     DeleteTripDialogComponent,
     MapComponent,
     TripViewEditComponent,
-    TripCreateComponent
+    TripCreateComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
