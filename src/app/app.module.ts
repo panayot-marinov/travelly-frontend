@@ -12,8 +12,6 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {TripListComponent} from './trip-list/trip-list.component';
-import {TripListItemComponent} from './trip-list-item/trip-list-item.component';
-import {TripDetailsComponent} from './trip-details/trip-details.component';
 import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
 import {FormsModule} from "@angular/forms";
@@ -23,11 +21,7 @@ import {AddItemDialogComponent} from './add-item-dialog/add-item-dialog.componen
 import {EditItemDialogComponent} from './edit-item-dialog/edit-item-dialog.component';
 import {DeleteItemDialogComponent} from './delete-item-dialog/delete-item-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import {ItemListComponent} from './item-list/item-list.component';
-import {DeleteTripDialogComponent} from './delete-trip-dialog/delete-trip-dialog.component';
 import {MatInputModule} from "@angular/material/input";
-import {AddTripDialogComponent} from "./add-trip-dialog/add-trip-dialog.component";
-import {EditTripDialogComponent} from "./edit-trip-dialog/edit-trip-dialog.component";
 import {MapComponent} from "./map/map.component";
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 import { ReactiveFormsModule } from '@angular/forms';
@@ -42,24 +36,17 @@ import {MatSelectModule} from "@angular/material/select";
 import { ItineraryViewEditComponent } from './itinerary-view-edit/itinerary-view-edit.component';
 import { ItineraryListComponent } from './itinerary-list/itinerary-list.component';
 import {TimelineComponent} from "./timeline/timeline.component";
+import { AccommodationFilterDialogComponent } from './accommodation-filter-dialog/accommodation-filter-dialog.component';
+import { ActivityFilterDialogComponent } from './activity-filter-dialog/activity-filter-dialog.component';
+import { TransportationOptionFilterDialogComponent } from './transportation-option-filter-dialog/transportation-option-filter-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     TripListComponent,
-    TripListItemComponent,
-    TripDetailsComponent,
     LoginComponent,
     RegistrationComponent,
-    ItemListComponent,
-    DeleteTripDialogComponent,
-    AddItemDialogComponent,
-    EditItemDialogComponent,
-    DeleteItemDialogComponent,
-    AddTripDialogComponent,
-    EditTripDialogComponent,
-    DeleteTripDialogComponent,
     MapComponent,
     TripViewEditComponent,
     TripCreateComponent,
@@ -67,7 +54,11 @@ import {TimelineComponent} from "./timeline/timeline.component";
     ContactComponent,
     ItineraryCreateComponent,
     ItineraryViewEditComponent,
-    ItineraryListComponent
+    ItineraryListComponent,
+    AccommodationFilterDialogComponent,
+    ActivityFilterDialogComponent,
+    TransportationOptionFilterDialogComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
