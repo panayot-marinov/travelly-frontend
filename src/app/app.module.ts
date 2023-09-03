@@ -54,8 +54,7 @@ import { TransportationOptionFilterDialogComponent } from './transportation-opti
     ItineraryListComponent,
     AccommodationFilterDialogComponent,
     ActivityFilterDialogComponent,
-    TransportationOptionFilterDialogComponent,
-    TimelineComponent
+    TransportationOptionFilterDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +77,8 @@ import { TransportationOptionFilterDialogComponent } from './transportation-opti
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    TimelineComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
