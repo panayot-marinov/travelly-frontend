@@ -40,9 +40,39 @@
         <input matInput [(ngModel)]="trip.interests" placeholder="Interests" name="interests">
       </mat-form-field>
     </form>
+
+    <h3><button mat-raised-button color="primary" (click)="addItem()">Add Item</button></h3>
+    <div *ngFor="let item of trip.items; let i = index">
+      <div class="resource-row">
+        <mat-form-field>
+          <input matInput placeholder="Name" name="name{{ i }}" [(ngModel)]="item.name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Description" name="description{{ i }}" [(ngModel)]="item.description">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Amount" name="amount{{ i }}" [(ngModel)]="item.amount">
+        </mat-form-field>
+<!--        <mat-form-field>-->
+<!--          <input matInput placeholder="Is Packed" name="isPacked{{ i }}" [(ngModel)]="item.isPacked">-->
+<!--        </mat-form-field>-->
+        <mat-form-field>
+          <mat-label>Is Packed</mat-label>
+          <mat-select [(ngModel)]="item.isPacked" name="isPacked{{ i }}">
+            <mat-option value="true">True</mat-option>
+            <mat-option value="false">False</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button color="warn" (click)="deleteItem(item.name)">
+          <mat-icon>remove_circle</mat-icon>
+        </button>
+      </div>
+    </div>
   </mat-card-content>
 
   <mat-card-actions>
     <button mat-button class="create-button" (click)="addTrip()">Add</button>
   </mat-card-actions>
 </mat-card>
+
+
