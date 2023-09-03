@@ -42,10 +42,14 @@
             <input matInput placeholder="Activity Location" name="activityLocation{{ i }}" [(ngModel)]="activity.location">
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Start Time" name="activityStartTime{{ i }}" [(ngModel)]="activity.startTime">
+            <input matInput [matDatepicker]="datetimePicker" placeholder="Start Time" name="activityStartTime{{ i }}" [(ngModel)]="activity.startTime">
+            <mat-datepicker-toggle matSuffix [for]="datetimePicker"></mat-datepicker-toggle>
+            <mat-datepicker #datetimePicker></mat-datepicker>
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="End Time" name="activityEndTime{{ i }}" [(ngModel)]="activity.endTime">
+            <input matInput [matDatepicker]="datetimePicker" placeholder="End Time" name="activityEndTime{{ i }}" [(ngModel)]="activity.endTime">
+            <mat-datepicker-toggle matSuffix [for]="datetimePicker"></mat-datepicker-toggle>
+            <mat-datepicker #datetimePicker></mat-datepicker>
           </mat-form-field>
           <mat-form-field>
             <input matInput placeholder="Activity Description" name="activityDescription{{ i }}" [(ngModel)]="activity.description">
@@ -94,6 +98,9 @@
         <button mat-raised-button color="primary" class="update-itinerary-button" (click)="updateItinerary()">Update Itinerary</button>
       </form>
     </mat-card-content>
+    <br/>
+    <app-timeline [activities]="activities"></app-timeline>
+
   </mat-card>
 
 </div>
