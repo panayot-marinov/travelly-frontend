@@ -11,6 +11,7 @@ import {TimelineComponent} from "./timeline/timeline.component";
 import {ItineraryCreateComponent} from "./itinerary-create/itinerary-create.component";
 import {ItineraryListComponent} from "./itinerary-list/itinerary-list.component";
 import {ItineraryViewEditComponent} from "./itinerary-view-edit/itinerary-view-edit.component";
+import {MapComponent} from "./map/map.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,7 +25,9 @@ const routes: Routes = [
   { path: 'timeline', component: TimelineComponent },
   { path: 'itineraries/:itineraryId', component: ItineraryViewEditComponent },
   { path: 'trips/:tripId/itineraries-create', component: ItineraryCreateComponent },
-  { path: 'trips/:tripId/itineraries', component: ItineraryListComponent }
+  { path: 'trips/:tripId/itineraries', component: ItineraryListComponent },
+  { path: 'map', component: MapComponent },
+  { path: 'map/:itineraryId', component: MapComponent },
 ];
 
 
