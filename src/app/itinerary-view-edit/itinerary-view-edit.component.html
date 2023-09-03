@@ -24,6 +24,14 @@
           <mat-form-field>
             <input matInput placeholder="Price Per Night" name="pricePerNight{{ i }}" [(ngModel)]="accommodation.pricePerNight">
           </mat-form-field>
+          <mat-form-field [style.width.px]=327>
+            <input matInput placeholder="Accommodation Latitude" name="accommodationLatitude{{ i }}"
+                   [(ngModel)]="accommodation.latitude">
+          </mat-form-field>
+          <mat-form-field class="narrow">
+            <input matInput placeholder="Accommodation Longitude" name="accommodationLongitude{{ i }}"
+                   [(ngModel)]="accommodation.longitude">
+          </mat-form-field>
           <!-- Add more accommodation fields as needed -->
         </div>
 
@@ -47,6 +55,14 @@
               <mat-option *ngFor="let type of activityTypes" [value]="type">{{ type }}</mat-option>
             </mat-select>
           </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Activity Latitude" name="activityLatitude{{ i }}"
+                   [(ngModel)]="activity.latitude">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Activity Longitude" name="activityLongitude{{ i }}"
+                   [(ngModel)]="activity.longitude">
+          </mat-form-field>
           <!-- Add more activity fields as needed -->
         </div>
 
@@ -64,9 +80,17 @@
               <mat-option *ngFor="let type of transportationOptionTypes" [value]="type">{{ type }}</mat-option>
             </mat-select>
           </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Transporation Option Latitude" name="transportationOptionLatitude{{ i }}"
+                   [(ngModel)]="transportationOption.latitude">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Transportation Option Longitude" name="transportationOptionLongitude{{ i }}"
+                   [(ngModel)]="transportationOption.longitude">
+          </mat-form-field>
           <!-- Add more transportation option fields as needed -->
         </div>
-
+        <button mat-raised-button color="primary" class="show-map-button" (click)="showMap()">Show Map</button>
         <button mat-raised-button color="primary" class="update-itinerary-button" (click)="updateItinerary()">Update Itinerary</button>
       </form>
     </mat-card-content>

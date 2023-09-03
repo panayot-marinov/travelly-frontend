@@ -6,70 +6,112 @@
     <mat-card-content>
       <form #itineraryForm="ngForm">
         <mat-form-field>
-          <input matInput placeholder="Itinerary Day Number" name="itineraryDayNum" [(ngModel)]="this.itinerary.dayNum" required>
+          <input matInput placeholder="Itinerary Day Number" name="itineraryDayNum" [(ngModel)]="this.itinerary.dayNum"
+                 required>
         </mat-form-field>
+          <!-- Accommodation section -->
+          <h3>
+            <button mat-raised-button color="primary" (click)="addAccommodation()">Add Accommodation</button>
+          </h3>
+          <div *ngFor="let accommodation of accommodations; let i = index">
+            <mat-form-field>
+              <input matInput placeholder="Accommodation Name" name="accommodationName{{ i }}"
+                     [(ngModel)]="accommodation.name">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Accommodation Address" name="accommodationAddress{{ i }}"
+                     [(ngModel)]="accommodation.address">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Accommodation City" name="accommodationCity{{ i }}"
+                     [(ngModel)]="accommodation.city">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Price Per Night" name="pricePerNight{{ i }}"
+                     [(ngModel)]="accommodation.pricePerNight">
+            </mat-form-field>
+            <mat-form-field class="narrow">
+              <input matInput placeholder="Accommodation Latitude" name="accommodationLatitude{{ i }}"
+                     [(ngModel)]="accommodation.latitude">
+            </mat-form-field>
+            <mat-form-field class="narrow">
+              <input matInput placeholder="Accommodation Longitude" name="accommodationLongitude{{ i }}"
+                     [(ngModel)]="accommodation.longitude">
+            </mat-form-field>
+            <!-- Add more accommodation fields as needed -->
+          </div>
 
-        <!-- Accommodation section -->
-        <h3><button mat-raised-button color="primary" (click)="addAccommodation()">Add Accommodation</button></h3>
-        <div *ngFor="let accommodation of accommodations; let i = index">
-          <mat-form-field>
-            <input matInput placeholder="Accommodation Name" name="accommodationName{{ i }}" [(ngModel)]="accommodation.name">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Accommodation Address" name="accommodationAddress{{ i }}" [(ngModel)]="accommodation.address">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Accommodation City" name="accommodationCity{{ i }}" [(ngModel)]="accommodation.city">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Price Per Night" name="pricePerNight{{ i }}" [(ngModel)]="accommodation.pricePerNight">
-          </mat-form-field>
-          <!-- Add more accommodation fields as needed -->
-        </div>
+          <!-- Activity section -->
+          <h3>
+            <button mat-raised-button color="primary" (click)="addActivity()">Add Activity</button>
+          </h3>
+          <div *ngFor="let activity of activities; let i = index">
+            <mat-form-field>
+              <input matInput placeholder="Activity Location" name="activityLocation{{ i }}"
+                     [(ngModel)]="activity.location">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Start Time" name="activityStartTime{{ i }}" [(ngModel)]="activity.startTime">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="End Time" name="activityEndTime{{ i }}" [(ngModel)]="activity.endTime">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Activity Description" name="activityDescription{{ i }}"
+                     [(ngModel)]="activity.description">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-select placeholder="Activity Type" name="activityType{{ i }}" [(ngModel)]="activity.type">
+                <mat-option *ngFor="let type of activityTypes" [value]="type">{{ type }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Activity Latitude" name="activityLatitude{{ i }}"
+                     [(ngModel)]="activity.latitude">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Activity Longitude" name="activityLongitude{{ i }}"
+                     [(ngModel)]="activity.longitude">
+            </mat-form-field>
+            <!-- Add more activity fields as needed -->
+          </div>
 
-        <!-- Activity section -->
-        <h3><button mat-raised-button color="primary" (click)="addActivity()">Add Activity</button></h3>
-        <div *ngFor="let activity of activities; let i = index">
-          <mat-form-field>
-            <input matInput placeholder="Activity Location" name="activityLocation{{ i }}" [(ngModel)]="activity.location">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Start Time" name="activityStartTime{{ i }}" [(ngModel)]="activity.startTime">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="End Time" name="activityEndTime{{ i }}" [(ngModel)]="activity.endTime">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Activity Description" name="activityDescription{{ i }}" [(ngModel)]="activity.description">
-          </mat-form-field>
-          <mat-form-field>
-            <mat-select placeholder="Activity Type" name="activityType{{ i }}" [(ngModel)]="activity.type">
-              <mat-option *ngFor="let type of activityTypes" [value]="type">{{ type }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <!-- Add more activity fields as needed -->
-        </div>
-
-        <!-- Transportation Option section -->
-        <h3><button mat-raised-button color="primary" (click)="addTransportationOption()">Add Transportation Option</button></h3>
-        <div *ngFor="let transportationOption of transportationOptions; let i = index">
-          <mat-form-field>
-            <input matInput placeholder="Transportation Option Duration" name="transportationOptionDuration{{ i }}" [(ngModel)]="transportationOption.duration">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Transportation Option Price" name="transportationOptionPrice{{ i }}" [(ngModel)]="transportationOption.price">
-          </mat-form-field>
-          <mat-form-field>
-            <mat-select placeholder="Transportation Option Type" name="transportationOptionType{{ i }}" [(ngModel)]="transportationOption.type">
-              <mat-option *ngFor="let type of transportationOptionTypes" [value]="type">{{ type }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <!-- Add more transportation option fields as needed -->
-        </div>
-
-        <button mat-raised-button color="primary" class="add-itinerary-button" (click)="addItinerary()">Add Itinerary</button>
+          <!-- Transportation Option section -->
+          <h3>
+            <button mat-raised-button color="primary" (click)="addTransportationOption()">Add Transportation Option
+            </button>
+          </h3>
+          <div *ngFor="let transportationOption of transportationOptions; let i = index">
+            <mat-form-field>
+              <input matInput placeholder="Transportation Option Duration" name="transportationOptionDuration{{ i }}"
+                     [(ngModel)]="transportationOption.duration">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Transportation Option Price" name="transportationOptionPrice{{ i }}"
+                     [(ngModel)]="transportationOption.price">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-select placeholder="Transportation Option Type" name="transportationOptionType{{ i }}"
+                          [(ngModel)]="transportationOption.type">
+                <mat-option *ngFor="let type of transportationOptionTypes" [value]="type">{{ type }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Transporation Option Latitude" name="transportationOptionLatitude{{ i }}"
+                     [(ngModel)]="transportationOption.latitude">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Transportation Option Longitude" name="transportationOptionLongitude{{ i }}"
+                     [(ngModel)]="transportationOption.longitude">
+            </mat-form-field>
+            <!-- Add more transportation option fields as needed -->
+          </div>
+        <button mat-raised-button color="primary" class="add-itinerary-button" (click)="addItinerary()">Add Itinerary
+        </button>
+        <br/>
       </form>
     </mat-card-content>
   </mat-card>
 
 </div>
+
