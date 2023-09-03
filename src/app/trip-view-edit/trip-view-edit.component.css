@@ -1,6 +1,6 @@
 /* Center the card in the viewport */
 mat-card {
-  max-width: 500px;
+  max-width: 1000px;
   margin: 0 auto;
   margin-top: 20px;
   background-color: cornflowerblue;
@@ -54,3 +54,24 @@ mat-datepicker-toggle {
   background-color: #71059e;
 }
 
+.itineraries-button {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  z-index: 999;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s, transform 0.5s;
+}
+
+.itineraries-button:hover {
+  background-color: #0056b3; /* New background color on hover */
+  transform: scale(1.1);
+}

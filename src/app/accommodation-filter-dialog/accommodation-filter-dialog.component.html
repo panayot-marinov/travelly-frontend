@@ -1,0 +1,21 @@
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Address" [(ngModel)]="address">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="City" [(ngModel)]="city">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price Per Night From" [(ngModel)]="pricePerNightFrom">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Price Per Night To" [(ngModel)]="pricePerNightTo">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button mat-button color="primary" (click)="applyFilters()">Filter</button>
+</mat-dialog-actions>

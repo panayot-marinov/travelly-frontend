@@ -89,22 +89,43 @@ export class ItineraryViewEditComponent {
   }
 
   updateItinerary() {
-    this.accommodations.forEach((accommodation: Accommodation) => {
-      this.accommodationService.updateAccommodation(accommodation);
-    });
+    this.itineraryService.updateItinerary(this.itinerary).subscribe(
+      (response) => {
+        this.accommodations.forEach((accommodation: Accommodation) => {
+          this.accommodationService.updateAccommodation(accommodation).subscribe();
+        });
 
-    this.activities.forEach((activity: Activity) => {
-      this.activityService.updateActivity(activity);
-    });
+        this.activities.forEach((activity: Activity) => {
+          this.activityService.updateActivity(activity).subscribe();
+        });
 
-    this.transportationOptions.forEach((transportationOption: TransportationOption) => {
-      this.transportationOptionService.updateTransportationOption(transportationOption);
-    });
-
-    this.itineraryService.updateItinerary(this.itinerary).subscribe();
+        this.transportationOptions.forEach((transportationOption: TransportationOption) => {
+          this.transportationOptionService.updateTransportationOption(transportationOption).subscribe();
+        });
+      }
+    );
   }
 
   showMap() {
     this.router.navigate(['map/' + this.itineraryId]);
+  }
+
+
+  deleteAccommodation(accommodationId: number) {
+    this.accommodationService.deleteAccommodationById(accommodationId).subscribe(() => {
+      this.accommodations = this.accommodations.filter(accommodation => accommodation.id !== accommodationId);
+    });
+  }
+
+  deleteActivity(activityId: number) {
+    this.activityService.deleteActivityById(activityId).subscribe(() => {
+      this.activities = this.activities.filter(activity => activity.id !== activityId);
+    });
+  }
+
+  deleteTransportationOption(transportationOptionId: number) {
+    this.transportationOptionService.deleteTransportationOptionById(transportationOptionId).subscribe(() => {
+      this.transportationOptions = this.transportationOptions.filter(transportationOption => transportationOption.id !== transportationOptionId);
+    });
   }
 }

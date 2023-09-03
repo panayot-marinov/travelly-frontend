@@ -26,8 +26,19 @@ export class TripCreateComponent {
   addTrip() {
     this.userService.addTrip(this.trip).subscribe(
       (tripId: number) => {
+        this.tripService.addItems(tripId, this.trip.items).subscribe();
         this.router.navigate(['/trips/', tripId, "itineraries-create"]);
       }
     );
+  }
+
+  addItem() {
+    this.trip.items.push({ id: 0, name: '', description: '', amount: 0, isPacked: false });
+    console.log(this.trip.items)
+  }
+
+  deleteItem(itemName: string) {
+    this.trip.items = this.trip.items.filter(item => item.name !== itemName);
+    console.log(this.trip.items)
   }
 }

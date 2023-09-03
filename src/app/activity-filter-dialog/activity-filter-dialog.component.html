@@ -1,0 +1,21 @@
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Activity Type" [(ngModel)]="activityType">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Location" [(ngModel)]="location">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Start Date" [(ngModel)]="startDate">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="End Date" [(ngModel)]="endDate">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Description" [(ngModel)]="description">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button mat-button color="primary" (click)="applyFilters()">Filter</button>
+</mat-dialog-actions>

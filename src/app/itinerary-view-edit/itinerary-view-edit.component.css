@@ -7,7 +7,7 @@
 
 mat-card {
   width: 100%;
-  max-width: 1700px;
+  max-width: 1800px;
   padding: 20px; /* Add padding to create spacing between form elements */
   box-sizing: border-box; /* Include padding in card width */
   background-color: cornflowerblue;
