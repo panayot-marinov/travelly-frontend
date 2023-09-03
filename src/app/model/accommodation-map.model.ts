@@ -1,5 +1,4 @@
-export interface Accommodation {
-  id: number;
+export interface AccommodationMap {
   name: string;
   address: string;
   city: string;

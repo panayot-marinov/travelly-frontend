@@ -17,9 +17,9 @@ import {ActivatedRoute} from "@angular/router";
 export class ItineraryCreateComponent {
   tripId = -1;
   itinerary: Itinerary = new Itinerary(0, 0);
-  accommodations: Accommodation[] = [{ id: 0, name: '', address: '', city: '', pricePerNight: 0 }];
-  activities: Activity[] = [{ id: 0, type: ActivityType.LEARNING, location: '', startTime: new Date(), endTime: new Date(), description: '' }];
-  transportationOptions: TransportationOption[] = [{ id: 0, type: TransportationOptionType.BUS, duration: new Date(), price: 0 }];
+  accommodations: Accommodation[] = [{ id: 0, name: '', address: '', city: '', pricePerNight: 0, latitude: 0, longitude: 0 }];
+  activities: Activity[] = [{ id: 0, type: ActivityType.LEARNING, location: '', startTime: new Date(), endTime: new Date(), description: '', latitude: 0, longitude: 0 }];
+  transportationOptions: TransportationOption[] = [{ id: 0, type: TransportationOptionType.BUS, duration: new Date(), price: 0, latitude: 0, longitude: 0 }];
 
   activityTypes = Object.values(ActivityType);
   transportationOptionTypes = Object.values(TransportationOptionType);
@@ -27,15 +27,15 @@ export class ItineraryCreateComponent {
   constructor(private itineraryService: ItineraryService, private tripService: TripService, private route: ActivatedRoute) {}
 
   addAccommodation() {
-    this.accommodations.push({ id: 0, name: '', address: '', city: '', pricePerNight: 0 });
+    this.accommodations.push({ id: 0, name: '', address: '', city: '', pricePerNight: 0, latitude: 0, longitude: 0 });
   }
 
   addActivity() {
-    this.activities.push({ id: 0, type: ActivityType.LEARNING, location: '', startTime: new Date(), endTime: new Date(), description: '' });
+    this.activities.push({ id: 0, type: ActivityType.LEARNING, location: '', startTime: new Date(), endTime: new Date(), description: '', latitude: 0, longitude: 0 });
   }
 
   addTransportationOption() {
-    this.transportationOptions.push({ id: 0, type: TransportationOptionType.BUS, duration: new Date(), price: 0 });
+    this.transportationOptions.push({ id: 0, type: TransportationOptionType.BUS, duration: new Date(), price: 0, latitude: 0, longitude: 0 });
   }
 
   addItinerary() {

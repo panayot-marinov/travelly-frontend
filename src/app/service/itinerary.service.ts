@@ -5,6 +5,9 @@ import {Itinerary} from "../model/itinerary.model";
 import {Accommodation} from "../model/accommodation.model";
 import {Activity} from "../model/activity.model";
 import {TransportationOption} from "../model/transportation-option.model";
+import {AccommodationMap} from "../model/accommodation-map.model";
+import {ActivityMap} from "../model/activity-map.model";
+import {TransportationOptionMap} from "../model/transportation-option-map.model";
 
 @Injectable({
   providedIn: 'root',
@@ -31,12 +34,24 @@ export class ItineraryService {
     return this.http.get<Accommodation[]>(`${this.apiUrl}/${itineraryId}/accommodations`);
   }
 
+  getMapAccommodations(itineraryId: number): Observable<AccommodationMap[]> {
+    return this.http.get<AccommodationMap[]>(`${this.apiUrl}/${itineraryId}/accommodations/map`);
+  }
+
   getActivities(itineraryId: number): Observable<Activity[]> {
     return this.http.get<Activity[]>(`${this.apiUrl}/${itineraryId}/activities`);
   }
 
+  getMapActivities(itineraryId: number): Observable<ActivityMap[]> {
+    return this.http.get<ActivityMap[]>(`${this.apiUrl}/${itineraryId}/activities/map`);
+  }
+
   getTransportationOptions(itineraryId: number): Observable<TransportationOption[]> {
     return this.http.get<TransportationOption[]>(`${this.apiUrl}/${itineraryId}/transportationOptions`);
+  }
+
+  getMapTransportationOptions(itineraryId: number): Observable<TransportationOptionMap[]> {
+    return this.http.get<TransportationOptionMap[]>(`${this.apiUrl}/${itineraryId}/transportationOptions/map`);
   }
 
   deleteItineraryById (itineraryId: number): Observable<any> {
@@ -52,8 +67,6 @@ export class ItineraryService {
   updateItinerary(itinerary: Itinerary): Observable<any> {
     return this.http.patch(`${this.apiUrl}/${itinerary.id}`, itinerary);
   }
-
-
 
 
   setItineraryId(itineraryId: number): void {
