@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TripList } from '../model/trip-list.model';
 import {Trip} from "../model/trip.model";
 import {Itinerary} from "../model/itinerary.model";
 import {Accommodation} from "../model/accommodation.model";

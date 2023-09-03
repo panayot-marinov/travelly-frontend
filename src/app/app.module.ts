@@ -17,9 +17,6 @@ import {LoginComponent} from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import {RegistrationComponent} from "./registration/registration.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {AddItemDialogComponent} from './add-item-dialog/add-item-dialog.component';
-import {EditItemDialogComponent} from './edit-item-dialog/edit-item-dialog.component';
-import {DeleteItemDialogComponent} from './delete-item-dialog/delete-item-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
 import {MapComponent} from "./map/map.component";
@@ -81,8 +78,7 @@ import { TransportationOptionFilterDialogComponent } from './transportation-opti
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule,
-    TimelineComponent,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
