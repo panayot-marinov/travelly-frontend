@@ -1,0 +1,31 @@
+
+.accommodation-filter-dialog {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accommodation-filter-dialog .dialog-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.accommodation-filter-dialog .mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.accommodation-filter-dialog .mat-dialog-actions {
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.accommodation-filter-dialog .filter-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.accommodation-filter-dialog .filter-button:hover {
+  background-color: #0056b3;
+}
