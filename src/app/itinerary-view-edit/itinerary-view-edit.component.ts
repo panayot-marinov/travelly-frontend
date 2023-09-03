@@ -7,7 +7,7 @@ import {TransportationOption} from "../model/transportation-option.model";
 import {TransportationOptionType} from "../enums/transportation-option-type";
 import {ItineraryService} from "../service/itinerary.service";
 import {TripService} from "../service/trip.service";
-import {ActivatedRoute, Route} from "@angular/router";
+import {ActivatedRoute, Route, Router} from "@angular/router";
 import {DateService} from "../service/date.service";
 import {Trip} from "../model/trip.model";
 import {AccommodationService} from "../service/accommodation.service";
@@ -22,9 +22,9 @@ import {TransportationOptionService} from "../service/transportation-option.serv
 export class ItineraryViewEditComponent {
   itineraryId: number = -1;
   itinerary: Itinerary = new Itinerary(0, 0);
-  accommodations: Accommodation[] = [{ id: 0, name: '', address: '', city: '', pricePerNight: 0 }];
-  activities: Activity[] = [{ id: 0, type: ActivityType.LEARNING, location: '', startTime: new Date(), endTime: new Date(), description: '' }];
-  transportationOptions: TransportationOption[] = [{ id: 0, type: TransportationOptionType.BUS, duration: new Date(), price: 0 }];
+  accommodations: Accommodation[] = [{ id: 0, name: '', address: '', city: '', pricePerNight: 0, latitude: 0, longitude: 0 }];
+  activities: Activity[] = [{ id: 0, type: ActivityType.LEARNING, location: '', startTime: new Date(), endTime: new Date(), description: '', latitude: 0, longitude: 0 }];
+  transportationOptions: TransportationOption[] = [{ id: 0, type: TransportationOptionType.BUS, duration: new Date(), price: 0, latitude: 0, longitude: 0 }];
 
   activityTypes = Object.values(ActivityType);
   transportationOptionTypes = Object.values(TransportationOptionType);
@@ -34,18 +34,19 @@ export class ItineraryViewEditComponent {
               private route: ActivatedRoute,
               private accommodationService: AccommodationService,
               private activityService: ActivityService,
-              private transportationOptionService: TransportationOptionService) {}
+              private transportationOptionService: TransportationOptionService,
+              private router: Router) {}
 
   addAccommodation() {
-    this.accommodations.push({ id: 0, name: '', address: '', city: '', pricePerNight: 0 });
+    this.accommodations.push({ id: 0, name: '', address: '', city: '', pricePerNight: 0, latitude: 0, longitude: 0 });
   }
 
   addActivity() {
-    this.activities.push({ id: 0, type: ActivityType.LEARNING, location: '', startTime: new Date(), endTime: new Date(), description: '' });
+    this.activities.push({ id: 0, type: ActivityType.LEARNING, location: '', startTime: new Date(), endTime: new Date(), description: '', latitude: 0, longitude: 0 });
   }
 
   addTransportationOption() {
-    this.transportationOptions.push({id: 0, type: TransportationOptionType.BUS, duration: new Date(), price: 0});
+    this.transportationOptions.push({id: 0, type: TransportationOptionType.BUS, duration: new Date(), price: 0, latitude: 0, longitude: 0});
   }
 
   ngOnInit(): void {
@@ -103,5 +104,9 @@ export class ItineraryViewEditComponent {
         });
       }
     );
+  }
+
+  showMap() {
+    this.router.navigate(['map/' + this.itineraryId]);
   }
 }

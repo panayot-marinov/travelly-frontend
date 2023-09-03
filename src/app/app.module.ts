@@ -41,6 +41,7 @@ import { ItineraryCreateComponent } from './itinerary-create/itinerary-create.co
 import {MatSelectModule} from "@angular/material/select";
 import { ItineraryViewEditComponent } from './itinerary-view-edit/itinerary-view-edit.component';
 import { ItineraryListComponent } from './itinerary-list/itinerary-list.component';
+import {TimelineComponent} from "./timeline/timeline.component";
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { ItineraryListComponent } from './itinerary-list/itinerary-list.componen
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    TimelineComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

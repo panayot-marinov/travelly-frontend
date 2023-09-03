@@ -1,0 +1,16 @@
+#myMap {
+  height: 820px; /* Set an appropriate height */
+  width: 100%;   /* Set an appropriate width or use '100vw' for full width */
+}
+
+.accommodation-marker .pin {
+  background-color: blue;
+}
+
+.activity-marker .pin {
+  background-color: green;
+}
+
+.transportation-marker .pin {
+  background-color: red;
+}

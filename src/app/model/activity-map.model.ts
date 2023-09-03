@@ -1,12 +1,10 @@
 import {ActivityType} from "../enums/activity-type";
 
-export interface Activity {
-  id: number;
+export interface ActivityMap {
   type: ActivityType;
   location: string;
   startTime: Date;
   endTime: Date;
-  description: string;
   latitude: number;
   longitude: number;
 }

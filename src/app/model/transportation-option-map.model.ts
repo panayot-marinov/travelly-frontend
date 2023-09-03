@@ -1,9 +1,7 @@
 import {TransportationOptionType} from "../enums/transportation-option-type";
 
-export interface TransportationOption {
-  id: number;
+export interface TransportationOptionMap {
   type: TransportationOptionType;
-  duration: Date;
   price: number;
   latitude: number;
   longitude: number;
