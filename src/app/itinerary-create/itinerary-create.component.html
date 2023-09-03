@@ -58,13 +58,9 @@
                        [(ngModel)]="activity.location">
               </mat-form-field>
               <mat-form-field>
-                <input matInput [matDatepicker]="datetimePicker1" placeholder="Start Time" name="activityStartTime{{ i }}" [(ngModel)]="activity.startTime">
-                <mat-datepicker-toggle matSuffix [for]="datetimePicker1"></mat-datepicker-toggle>
-                <mat-datepicker #datetimePicker1></mat-datepicker>            </mat-form-field>
+                <input matInput placeholder="Start Time" name="activityStartTime{{ i }}" [(ngModel)]="activity.startTime"></mat-form-field>
               <mat-form-field>
-                <input matInput [matDatepicker]="datetimePicker2" placeholder="End Time" name="activityEndTime{{ i }}" [(ngModel)]="activity.endTime">
-                <mat-datepicker-toggle matSuffix [for]="datetimePicker2"></mat-datepicker-toggle>
-                <mat-datepicker #datetimePicker2></mat-datepicker>
+                <input matInput placeholder="End Time" name="activityEndTime{{ i }}" [(ngModel)]="activity.endTime">
               </mat-form-field>
               <mat-form-field>
                 <input matInput placeholder="Activity Description" name="activityDescription{{ i }}"
