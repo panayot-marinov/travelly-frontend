@@ -5,4 +5,6 @@ export interface TransportationOption {
   type: TransportationOptionType;
   duration: Date;
   price: number;
+  latitude: number;
+  longitude: number;
 }

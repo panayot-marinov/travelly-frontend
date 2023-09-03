@@ -4,4 +4,6 @@ export interface Accommodation {
   address: string;
   city: string;
   pricePerNight: number;
+  latitude: number;
+  longitude: number;
 }

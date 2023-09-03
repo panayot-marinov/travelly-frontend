@@ -7,4 +7,6 @@ export interface Activity {
   startTime: Date;
   endTime: Date;
   description: string;
+  latitude: number;
+  longitude: number;
 }
