@@ -1,6 +1,6 @@
 /* Center the card in the viewport */
 mat-card {
-  max-width: 500px;
+  max-width: 1000px;
   margin: 0 auto;
   margin-top: 20px;
   background-color: cornflowerblue;
