@@ -7,7 +7,7 @@
 
 mat-card {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1700px;
   padding: 20px; /* Add padding to create spacing between form elements */
   box-sizing: border-box; /* Include padding in card width */
   background-color: cornflowerblue;
@@ -18,7 +18,15 @@ mat-card {
 }
 
 mat-form-field{
-  margin-right: 20px; /* Adjust the value to control the spacing */
+  margin-right: 10px; /* Adjust the value to control the spacing */
+}
+
+.update-itinerary-button {
+  width: 40%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .update-itinerary-button {
