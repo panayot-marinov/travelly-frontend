@@ -109,4 +109,23 @@ export class ItineraryViewEditComponent {
   showMap() {
     this.router.navigate(['map/' + this.itineraryId]);
   }
+
+
+  deleteAccommodation(accommodationId: number) {
+    this.accommodationService.deleteAccommodationById(accommodationId).subscribe(() => {
+      this.accommodations = this.accommodations.filter(accommodation => accommodation.id !== accommodationId);
+    });
+  }
+
+  deleteActivity(activityId: number) {
+    this.activityService.deleteActivityById(activityId).subscribe(() => {
+      this.activities = this.activities.filter(activity => activity.id !== activityId);
+    });
+  }
+
+  deleteTransportationOption(transportationOptionId: number) {
+    this.transportationOptionService.deleteTransportationOptionById(transportationOptionId).subscribe(() => {
+      this.transportationOptions = this.transportationOptions.filter(transportationOption => transportationOption.id !== transportationOptionId);
+    });
+  }
 }
